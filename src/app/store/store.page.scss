@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+.price {
+    color: var(--ion-color-Dark);
+  }
+  /* Establecer fondo blanco para toda la página */
+ion-content {
+  background-color: white ;
+  --background: rgb(216, 238, 241);
+   
+}
+
+/* título del encabezado, el botón de retroceso y el botón del carrito de compras */
+ion-title, ion-back-button, ion-button[routerLink="/cart"] {
+  color: black; 
+  background-color:  rgb(216, 238, 241);
+}
+
+/* barra de búsqueda */
+ion-searchbar {
+  --background: white ;
+  background-color:  rgb(216, 238, 241);
+  border-radius: 20px;
+  
+}
+
+
+/*imágenes dentro de las cajas */
+ion-thumbnail img {
+  border-radius: 50%; 
+}
+
+ion-item {
+  margin-bottom: 16px; 
+  border-radius: 20px; 
+  --background:   rgb(149, 250, 175);
+}
+
+/*lista */
+ion-list {
+  background-color:  rgb(216, 238, 241); 
+}
+
+
+/* toolbar */
+ion-toolbar {
+  --background:  rgb(216, 238, 241); 
+}
+
+ion-item {
+  color: black; 
+}
+
+
+
+
+
+

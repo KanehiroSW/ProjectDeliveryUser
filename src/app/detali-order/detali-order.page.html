@@ -1,7 +1,35 @@
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detali-order</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <!-- Botón de retroceso -->
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item class="ion-no-padding" *ngFor="let product of products">
+      <ion-thumbnail slot="start">
+        <img [src]="product.image" alt="Product Image">
+      </ion-thumbnail>
+      <ion-label class="ion-text-wrap">
+        <h2>{{ product.name }}</h2>
+        <p class="price">S/{{ product.price }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar class="footer-toolbar">
+    <div class="total-container">
+      <p>Total: S/{{ getTotalPrice() }}</p>
+    </div>
+    <ion-button expand="full" color="primary" (click)="confirmPurchase()">Confirmar</ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+
+
+
