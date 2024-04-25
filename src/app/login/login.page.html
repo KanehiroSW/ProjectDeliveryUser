@@ -1,7 +1,32 @@
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+<ion-item class="Logo">
+  <img class="img"src="./assets/Dashy-Logo.png" alt="Logo">
+</ion-item>
+  <div class="Login-section ion-padding">
+    <div class="heading ion-padding">
+      <h1 class="h1">Provecho Vallejiano!</h1>
+      <p class="p">Inicia sesión con tu usuario Trilce</p>
+    </div>
+    <div class="Login-form ion-padding">
+      <div class="form-input">
+        <ion-icon name="person-circle-outline"></ion-icon>
+        <ion-item class="iitem">
+          <ion-label class="label" position="floating">USUARIO</ion-label>
+          <ion-input class="iinput" type="text"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="key-outline"></ion-icon>
+        <ion-item class="iitem">
+          <ion-label class="label" position="floating">CONTRASEÑA</ion-label>
+          <ion-input class="iinput" type="password"></ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <div class="action-button ion-padding">
+      <ion-button size="large" class="login-button" routerLink="/tabs">
+        INGRESAR
+      </ion-button>
+    </div>  
+  </div>
 </ion-content>
