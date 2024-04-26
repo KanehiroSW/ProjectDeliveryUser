@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+    
+
+
+ion-content {
+    --ion-background-color: #cefef9; /* Cambia el color de fondo de la página */
+    --ion-color-base: #FFFFFF; /* Cambia el color del texto a blanco */
+}
+.container {
+    padding: 16px;
+    background-color: #cefef9; /* Fondo de color */
+  }
+  
+  .title {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  ion-grid {
+    margin-top: 16px;
+  }
+  
+  ion-row {
+    margin-bottom: 16px;
+  }
+  
+  ion-label {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  ion-input {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  ion-button {
+    font-family: "Nunito Sans", sans-serif;
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  ion-button[color="secondary"] {
+    background-color: #87CEEB; /* Azul claro */
+    color: #fff;
+  }
+  
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-top: 16px;
+  }

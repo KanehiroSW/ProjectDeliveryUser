@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+*{
+    font-family: "Nunito Sans", sans-serif;
+}
+.product-image {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+  }
+  
+  ion-content {
+    --ion-background-color: #cefef9; /* Cambia el color de fondo de la página */
+    --ion-color-base: #FFFFFF; /* Cambia el color del texto a blanco */
+}
+
+  ion-card {
+    margin-bottom: 10px;
+    background-color: #0195ff; /* Cambia el color de fondo de la tarjeta */
+    color: #FFFFFF;
+}
+
+  .parrafoD{
+    text-align: center;
+  }
+
+  ion-card-content {
+    padding: 10px;
+  }
+  
+  ion-row {
+    font-family: "Nunito Sans", sans-serif;
+    margin-bottom: 10px;
+    padding-left: 40px ;
+  }
+  .hTotal{/*TOTAL: S/XXX.XX*/
+    font-weight: 900;
+    color: #000000;
+  }
+  .rowDetalle {
+    padding-left: 10px;
+    font-weight: 900;
+
+  }
+
+  .rowAbajoDetalle {
+    font-weight: 400;
+  }
+  
+  ion-col {
+    padding: 10px;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  p {
+    margin-bottom: 0;
+  }
+  
