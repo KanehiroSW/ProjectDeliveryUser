@@ -1,13 +1,14 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <!-- Botón de retroceso -->
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
-    </ion-buttons>
+ 
+     <ion-buttons slot="start">
+      <ion-back-button defaultHref="/" routerLink="../tabs"></ion-back-button>
+    </ion-buttons> 
     <ion-title size="large">Kioskos</ion-title>
     <!-- Icono de carrito de compras -->
     <ion-buttons slot="end">
-      <ion-button routerLink="/cart">
+      <ion-button routerLink="../detali-order">
         <ion-icon name="cart"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -28,7 +29,8 @@
         <h2>{{ product.name }}</h2>
         <p class="price">S/{{ product.price }}</p>
       </ion-label>
-      <ion-button fill="clear" (click)="addToCart(product)" slot="end">
+
+      <ion-button fill="clear" (click)="addToCart(product)" slot="end" routerLink="../detail-product">
         <ion-icon name="add"></ion-icon>
       </ion-button>
     </ion-item>

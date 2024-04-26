@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6e6fa;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+img {
+    margin: 30px 70px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.general {
+    width: 90%; 
+    margin: auto;
+    right: 0;
+    left: 0;
+    bottom: 40px;
+    position: fixed;
+    padding: 1px;
+    border-radius: 10px;
+    background-color: #98fb98;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.UserName {
+    text-align: center;
+    margin: 0px 0px 15px 0px;
+    font-size: 25px;
+    padding: auto;
+}
+
+.iitem {
+    --padding-start: 0px;
+    --inner-padding-start: 0px;
+    --border-width: 0px;
+    margin: 10px 0px;
+}
+
+
+ion-label {
+    margin: 0px 30px 10px 30px;
+    font-weight: bold;
+    color: #333;
+}
+
+ion-input {
+    border: none;
+    background-color: transparent;
+    color: #333;
+}

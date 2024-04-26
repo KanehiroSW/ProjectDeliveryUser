@@ -1,63 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
-ion-toolbar {
-  font-family: 'Lugrarismo';
-    --background: linear-gradient(to right, #272424, #646261); /* Gradiente de color */
-    --color: rgb(206, 206, 206); /* Color del texto */
-  }
-  
-  ion-title {
-    font-size: 24px;
-    font-weight: bold;
-    font-family: "Nunito Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100, "YTLC" 500;
-  }
-  
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: #f8f8f8;
-  }
-  
-  .item-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .item-box:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
-  }
 
-  .item-box {
-    display: flex;
-    align-items: center;
-    border-radius: 20px;
-    padding: 10px; 
-    margin: 0 10px 20px 10px; 
-    background: linear-gradient(to right, #ffffff, #b3d9ff);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.3s ease;
-    border: 2px solid #00BFFF; /* Borde azul de 2px de ancho */
-  }
-  
-  
-  
-  .item-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px; /* Espacio a la derecha de la imagen */
-  }
-  
-  .item-description {
-    font-family: 'Roboto Condensed', sans-serif;
-    flex-grow: 1; /* Permite que la descripción ocupe todo el espacio restante */
-    text-align: left; /* Alinea el texto a la izquierda */
-  }
-  
+.ImgDis{
+  margin: 15px 0px 15px 0px;
+}
 
-  
+h2 {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 26px;
+  font-weight: 550;
+  font-style: bolder;
+}
+
+.item-wrapper {
+  position: relative; /* Agregamos posición relativa para que el botón pueda ser posicionado de forma absoluta */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.pizza{
+  background-image: url('/assets/Boton-pizza.png'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  background-position: center;
+  border-radius: 20px;
+}
+
+.jugo{
+  background-image: url('/assets/Boton-jugo.png'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  background-position: center;
+  border-radius: 20px;
+}
+
+.pollo{
+  background-image: url('/assets/Boton-pollo.png'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  background-position: center;
+  border-radius: 20px;
+}
+
+.kiosco{
+  background-image: url('/assets/Boton-Dulce.png'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  background-position: center;
+  border-radius: 20px;
+}
+
+
+.item-box:hover {
+  transform: translateY(-5px);
+}
+
+.item-box {
+  position: relative; /* Agregamos posición relativa para que el botón pueda ser posicionado de forma absoluta */
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 0 10px 20px 10px;
+  transition: transform 0.3s ease;
+}
+
+.item-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 30%;
+  margin-right: 20px;
+}
+
+.item-description {
+  font-family: "Nunito Sans", sans-serif;
+  flex-grow: 1;
+  text-align: left;
+}
+
+ion-button {
+  position: absolute; 
+  top: -10px;
+  right: -5px;
+  background-color:  #FD487E;  
+  color: #fff;  
+  border: none;  
+  width: 70px;  
+  height: 40px;  
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
+  transition: background-color 0.3s ease;  
+}
+
+ 
