@@ -1,0 +1,63 @@
+
+ion-toolbar {
+  font-family: 'Lugrarismo';
+    --background: linear-gradient(to right, #272424, #646261); /* Gradiente de color */
+    --color: rgb(206, 206, 206); /* Color del texto */
+  }
+  
+  ion-title {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100, "YTLC" 500;
+  }
+  
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #f8f8f8;
+  }
+  
+  .item-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .item-box:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el cursor */
+  }
+
+  .item-box {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding: 10px; 
+    margin: 0 10px 20px 10px; 
+    background: linear-gradient(to right, #ffffff, #b3d9ff);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+    border: 2px solid #00BFFF; /* Borde azul de 2px de ancho */
+  }
+  
+  
+  
+  .item-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px; /* Espacio a la derecha de la imagen */
+  }
+  
+  .item-description {
+    font-family: 'Roboto Condensed', sans-serif;
+    flex-grow: 1; /* Permite que la descripción ocupe todo el espacio restante */
+    text-align: left; /* Alinea el texto a la izquierda */
+  }
+  
+
+  

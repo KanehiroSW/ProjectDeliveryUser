@@ -1,8 +1,53 @@
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">PEDIDOS PENDIENTES</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-header>
+  <ion-toolbar>
+      <ion-title>Pedidos pendientes</ion-title>
+      <ion-buttons slot="start">
+          <ion-back-button default-href="#" text=" "></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content class="content-gris" style="overflow: auto;">
+  <div class="pedido-container">
+      <br>
+      <div class="pedido-item">
+          <div class="proveedor">
+              <div class="proveedor-img">
+                  <img src="./assets/tiendajugo.png" alt="Tienda 1">
+              </div>
+              <div class="proveedor-name">Proveedor: Jugos</div>
+              <ion-icon class="arrow-icon" name="arrow-forward-outline"></ion-icon> <!-- Agrega el icono de flecha -->
+          </div>
+      </div>
+      <div class="pedido-item">
+          <div class="proveedor">
+              <div class="proveedor-img">
+                  <img src="./assets/hamburgueseria.png" alt="Tienda 2">
+              </div>
+              <div class="proveedor-name">Proveedor: Hamburguesas </div>
+              <ion-icon class="arrow-icon" name="arrow-forward-outline"></ion-icon> <!-- Agrega el icono de flecha -->
+          </div>
+      </div>
+      <div class="pedido-item">
+          <div class="proveedor">
+              <div class="proveedor-img">
+                  <img src="./assets/polleria.png" alt="Tienda 3">
+              </div>
+              <div class="proveedor-name">Proveedor: Pollos </div>
+              <ion-icon class="arrow-icon" name="arrow-forward-outline"></ion-icon> <!-- Agrega el icono de flecha -->
+          </div>
+      </div>
+      <div class="pedido-item">
+        <div class="proveedor">
+            <div class="proveedor-img">
+                <img src="./assets/criollo.png" alt="Tienda 3">
+            </div>
+            <div class="proveedor-name">Proveedor: Criollo </div>
+            <ion-icon class="arrow-icon" name="arrow-forward-outline"></ion-icon> <!-- Agrega el icono de flecha -->
+        </div>
+    </div>
+  </div>
 </ion-content>
+
+
+

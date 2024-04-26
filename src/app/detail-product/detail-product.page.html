@@ -1,7 +1,43 @@
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">detail-product</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-header>
+</ion-header>
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="#" text="" class="centered"></ion-back-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-content class="ion-padding">
+  <div class="container" style="border: 2px solid rgb(0, 217, 255); border-radius: 10px;">
+    <div class="contenedor-imagen">
+      <h2>Detalle de producto</h2> <!-- Título encima de la imagen -->
+      <img src="./assets/casino.png" alt="Descripción de la imagen">
+      <h3>Galleta casino</h3>
+    </div>
+</div>
+
+  <br>
+
+  <div class="container2" style="border: 2px solid rgb(0, 217, 255); border-radius: 10px;">
+    <h2>CASINO</h2>
+    <p class="descripcion">Sixpack Galleta con Crema Casino Lucu Magic 43g, 
+      deliciosas galletas rellenas de crema con un toque mágico en cada bocado.</p>
+    <div class="icono-texto">
+      <ion-icon name="storefront-outline" style="font-size: 2em; vertical-align: middle;"></ion-icon>
+      <p style="display: inline; margin-left: 10px;">Envío delivery</p>
+    </div>
+  </div>
+
+  <ion-item lines="none" class="contador">
+    <ion-button (click)="decreaseQuantity()" fill="clear" size="small" class="boton">
+      <ion-icon name="remove-outline" size="small"></ion-icon>
+    </ion-button>
+    <ion-input [(ngModel)]="quantity" type="number" min="1" max="10" class="numero"></ion-input>
+    <ion-button (click)="increaseQuantity()" fill="clear" size="small" class="boton">
+      <ion-icon name="add-outline" size="small"></ion-icon>
+    </ion-button>
+  </ion-item>  
 </ion-content>
+
+<ion-button class="boton-carrito" color="#CDFF8E">Agregar al carrito</ion-button>
+
+
+

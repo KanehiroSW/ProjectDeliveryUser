@@ -1,0 +1,62 @@
+.pedido-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+
+.pedido-item {
+  position: relative; /* Agrega posición relativa para que el icono de flecha sea posicionado relativo a este elemento */
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid rgb(0, 217, 255);
+  background-color: #CDFF8E
+}
+
+.proveedor {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative; /* Agrega posición relativa para que el icono de flecha sea posicionado relativo a este elemento */
+}
+
+
+.proveedor-name{
+  font-weight: bold;
+}
+
+.proveedor-img {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  margin: 0 auto 10px;
+  border-radius: 50%;
+}
+
+.proveedor-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.proveedor-name {
+  margin-top: 5px;
+}
+
+.content-gris {
+  background-color: gray;
+}
+
+ion-content {
+  --background:  #f2f2f2;
+  
+}
+
+.arrow-icon {
+  position: absolute; /* Posiciona el icono absolutamente dentro del contenedor */
+  top: 10px; /* Coloca el icono 10px desde la parte superior */
+  right: 10px; /* Coloca el icono 10px desde el lado derecho */
+  color: black; /* Cambia el color del icono a negro */
+}
