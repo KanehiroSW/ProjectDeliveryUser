@@ -19,24 +19,40 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-item class="ion-no-padding" *ngFor="let product of filteredProducts">
-      <ion-thumbnail slot="start">
-        <img [src]="product.image" alt="Product Image">
-      </ion-thumbnail>
-      <ion-label class="ion-text-wrap">
-        <h2>{{ product.name }}</h2>
-        <p class="price">S/{{ product.price }}</p>
-      </ion-label>
-
-      <ion-button fill="clear" (click)="addToCart(product)" slot="end" routerLink="../detail-product">
-        <ion-icon name="add"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
+<ion-content class="content-gris">
+  <div class="pedido-container">
+      <br>
+      <div class="pedido-item">
+          <div class="proveedor">
+              <div class="proveedor-img">
+                  <img src="./assets/casino.jpg" alt="Tienda 1">
+              </div>
+          </div>
+      </div>
+      <div class="pedido-item">
+          <div class="proveedor">
+              <div class="proveedor-img">
+                  <img src="./assets/cocacola.jpg" alt="Tienda 2">
+              </div>
+          </div>
+      </div>
+      <div class="pedido-item">
+          <div class="proveedor">
+              <div class="proveedor-img">
+                  <img src="./assets/sublime.jpg" alt="Tienda 3">
+              </div>
+          </div>
+      </div>
+      <div class="pedido-item">
+        <div class="proveedor">
+            <div class="proveedor-img">
+                <img src="./assets/papas.jpg" alt="Tienda 3">
+            </div>
+        </div>
+    </div>
+  </div>
 </ion-content>
- 
+
 
 
 
