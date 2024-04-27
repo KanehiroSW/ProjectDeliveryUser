@@ -1,54 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-
-.ImgDis{
-  margin: 15px 0px 15px 0px;
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+.header{
+  position: absolute;
+  background:#56E671;
+  height: 200px;
+  margin: 0px;
+  width: 100%;
 }
 
-h2 {
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 26px;
-  font-weight: 550;
-  font-style: bolder;
+ion-list{
+  background: white;
+  margin: 130px 0px 0px 0px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  box-shadow: 0px -2px 2px rgba(0, 0, 0, 0.2);
+  height: auto;
 }
 
 p{
-  font-family: "Nunito Sans", sans-serif;
-  font-size: 15px;
-  font-weight: 450;
-  font-style: bolder;
-  color: gray;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  color: #F2F2F2;
 }
 
-.item-wrapper {
-  position: relative; /* Agregamos posición relativa para que el botón pueda ser posicionado de forma absoluta */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 10px;
-
+.ptit{
+  font-size: 48px;
+  margin: 10px 0px 0px 10px;
+  font-weight: 650;
+}
+.psub{
+  font-size: 25px;
+  margin: 2px 0px 0px 55px;
 }
 
-.item-box {
-  position: relative; /* Agregamos posición relativa para que el botón pueda ser posicionado de forma absoluta */
-  display: flex;
-  align-items: center;
-  border-radius: 20px;
-  padding: 10px;
-  margin: 0 10px 20px 10px;
-  background-color: #CDFF8E;
-}
-
-.item-image {
+.imgHsold{
+  position: absolute;
   width: 100px;
-  height: 100px;
-  border-radius: 30%;
-  margin-right: 20px;
+  height: 200px;
+  top: 0;
+  right: 0;
 }
 
-.item-description {
-  font-family: "Nunito Sans", sans-serif;
-  flex-grow: 1;
-  text-align: left;
+ion-card{
+  border-radius: 30px;
+  font-family: "Outfit", sans-serif;
+  width: 350px;
 }
 
- 
+ion-card-title{
+  font-size: 25px;
+}
+
+.Product, .Quantity{
+  display: inline-block;
+}
+
+.Quantity{
+  margin-left: 110px;
+}
+
+ion-card-subtitle{
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+}

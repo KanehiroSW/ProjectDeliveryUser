@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+  <img class="imgucv" src="assets/ImgIntro/Intro-ucv.png" alt="Intro-logo">
+  <img class="imglogo" src="assets/ImgIntro/Intro-logo.png" alt="Intro-logo">
+  <p class="lbl1">¿LISTO PARA SUMERGIRTE EN LA DELICIA?</p>
+  <p class="lbl2">DASHY la app de delivery que buscabas</p>
+  <ion-button id="open-modal" color="#FC6060" class="btngo">
+    EMPEZAR
+  </ion-button>
+  <ion-modal trigger="open-modal" [initialBreakpoint]="0.4" [breakpoints]="[0, 0.4]">
+    <ng-template>
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label>Ingresa con tu usuario Trilce</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start" name="person-circle-outline" color="white"></ion-icon>
+          <ion-input label="Usuario" labelPlacement="floating"></ion-input>
+        </ion-item>
+        <ion-item class="iipass">
+          <ion-icon slot="start" name="key" color="white"></ion-icon>
+          <ion-input type="password" placeholder="••••••••••••">
+            <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+          </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-button (click)="closeModal()" class="btnlog" color="#FC6060" routerLink="../tabs/tab1">
+            Ingresar
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ng-template>
+  </ion-modal>
+</ion-content>

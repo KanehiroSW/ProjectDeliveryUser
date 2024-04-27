@@ -1,55 +1,52 @@
-
-<ion-content class="container">
-  <div class="ImgDis">
-    <img src="/assets/TiendasDis.png" alt="logo">
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <p class="ptit">TIENDAS</p>
+    <P class="psub">DISPONIBLES</P>
   </div>
-    <div class="item-wrapper">
-      <div class="item-box kiosco">
-        <img src="./assets/kiosco.jpg" alt="Imagen de la tienda" class="item-image">
-        <div class="item-description">
-          <h2>Kioscos</h2>
-          <p>Golosinas y comidas rápidas.</p>
-        </div>
-        <ion-button color="#4895FD" routerLink="/store">
-          <ion-icon name="arrow-forward"></ion-icon> 
-        </ion-button>        
-      </div>
+  <img class="imgHstore" src="/assets/ImgStore/Home-store.png" alt="store">
+  <ion-list lines="none">
+    <div class="slSwip">
+      <swiper-container autoplay loop>
+        <swiper-slide><img src="/assets/ImgStore/Info1.png" alt="Info1"></swiper-slide>
+        <swiper-slide><img src="/assets/ImgStore/Info2.png" alt="Info2"></swiper-slide>
+        <swiper-slide><img src="/assets/ImgStore/Info3.png" alt="Info3"></swiper-slide>
+      </swiper-container>
     </div>
-    <div class="item-wrapper">
-      <div class="item-box jugo">
-        <img src="./assets/jugueria.jpg" alt="Imagen de la tienda" class="item-image">
-        <div class="item-description">
-          <h2>Jugos</h2>
-          <p>Jugos con distintos sabores deliciosos.</p>
-        </div>
-        <ion-button color="#4895FD">
-          <ion-icon name="arrow-forward"></ion-icon> 
-        </ion-button>        
-      </div>
-    </div>
-    <div class="item-wrapper">
-      <div class="item-box pizza">
-        <img src="./assets/pizza.jpg" alt="Imagen de la tienda" class="item-image">
-        <div class="item-description">
-          <h2>Pizzas</h2>
-          <p>Pizzas personales de diversos sabores.</p>
-        </div>
-        <ion-button color="#4895FD">
-          <ion-icon name="arrow-forward"></ion-icon> 
-        </ion-button>        
-      </div>
-    </div>
-
-    <div class="item-wrapper">
-      <div class="item-box pollo">
-        <img src="./assets/pizza.jpg" alt="Imagen de la tienda" class="item-image">
-        <div class="item-description">
-          <h2>Polleria</h2>
-          <p>Comidas rápidas y parrillas.</p>
-        </div>
-        <ion-button color="#4895FD">
-          <ion-icon name="arrow-forward"></ion-icon> 
-        </ion-button>        
-      </div>
-    </div>
+    <ion-item lines="none">
+      <ion-card [button]="true">
+        <img alt="Banner1" src="/assets/ImgStore/Banner1.png" />
+        <ion-card-header>
+          <ion-card-title>Kiosco</ion-card-title>
+          <ion-card-subtitle>Ubicación: Pisos (1-8) Pabellón (A-B)</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-card [button]="true">
+        <img alt="Banner2" src="/assets/ImgStore/Banner4.png" />
+        <ion-card-header>
+          <ion-card-title>Pollos</ion-card-title>
+          <ion-card-subtitle>Ubicación: Al frente de la Biblioteca</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-card [button]="true">
+        <img alt="Banner3" src="/assets/ImgStore/Banner3.png" />
+        <ion-card-header>
+          <ion-card-title>Pizzas</ion-card-title>
+          <ion-card-subtitle>Ubicación: Al frente de la Biblioteca</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-card [button]="true">
+        <img alt="Banner4" src="/assets/ImgStore/Banner2.png" />
+        <ion-card-header>
+          <ion-card-title>Jugos</ion-card-title>
+          <ion-card-subtitle>Ubicación: Al frente de la Biblioteca</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>

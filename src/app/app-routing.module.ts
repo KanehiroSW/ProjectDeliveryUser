@@ -7,13 +7,10 @@ const routes: Routes = [
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },
-  {
     path: 'detail-product',
     loadChildren: () => import('./detail-product/detail-product.module').then( m => m.DetailProductPageModule)
   },
+  
   {
     path: 'store',
     loadChildren: () => import('./store/store.module').then( m => m.StorePageModule)
@@ -27,8 +24,8 @@ const routes: Routes = [
     loadChildren: () => import('./detali-shipping/detali-shipping.module').then( m => m.DetaliShippingPageModule)
   },
   {
-    path: 'detali-order-peding',
-    loadChildren: () => import('./detali-order-peding/detali-order-peding.module').then( m => m.DetaliOrderPedingPageModule)
+    path: 'intro',
+    loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
   }
 ];
 @NgModule({

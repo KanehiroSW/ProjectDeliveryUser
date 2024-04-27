@@ -1,35 +1,65 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-    <!-- Botón de retroceso -->
-    <ion-buttons slot="start">
-      <ion-back-button routerLink="../store"></ion-back-button>
-    </ion-buttons>
+    <ion-button class="btnRet" color="black" routerLink="/store">
+      <ion-icon clas="icRet" name="caret-back"></ion-icon>
+    </ion-button>
+    <h1 class="tit">Detalle de Pedido</h1>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <ion-list>
-    <ion-item class="ion-no-padding" *ngFor="let product of products">
-      <ion-thumbnail slot="start">
-        <img [src]="product.image" alt="Product Image">
-      </ion-thumbnail>
-      <ion-label class="ion-text-wrap">
-        <h2>{{ product.name }}</h2>
-        <p class="price">S/{{ product.price }}</p>
-      </ion-label>
-    </ion-item>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="/assets/ImgDetOrder/DO-casinocho.jpg" alt="Product Image">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Casino de Chocolate</h2>
+          <p class="info">Cantidad: </p>
+          <p class="info">2</p>
+          <p class="info">S/2.50</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger">
+          <ion-icon class="trash" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item-sliding>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img src="/assets/ImgDetOrder/DO-casinocho.jpg" alt="Product Image">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>Casino de Chocolate</h2>
+          <p class="info">Cantidad: </p>
+          <p class="info">2</p>
+          <p class="info">S/2.50</p>
+        </ion-label>
+      </ion-item>
+      <ion-item-options>
+        <ion-item-option color="danger">
+          <ion-icon class="trash" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar class="footer-toolbar">
-    <div class="total-container">
-      <p>Total: S/{{ getTotalPrice() }}</p>
-    </div>
-    <ion-button expand="full" color="primary" (click)="confirmPurchase()" routerLink="/detali-shipping">Confirmar</ion-button>
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <p class="ptot ptotl">Total:</p>
+          <p class="ptot ptotp">S/20.0</p>
+        </ion-col>
+        <ion-col>
+          <ion-button class="btncon" routerLink="/detali-shipping">Continuar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-footer>
-
-
-
-

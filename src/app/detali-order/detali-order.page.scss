@@ -1,56 +1,81 @@
-.total-container {
-    text-align: center;
-  }
-  
-  .total-container {
-    text-align: center;
-  }
-  
-  .footer-toolbar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  ion-content {
-    background-color: white ;
-    --background: rgb(216, 238, 241);
-     
-  }
-  /*imágenes dentro de las cajas */
-ion-thumbnail img {
-    border-radius: 50%; 
-  }
-  
-  ion-item {
-    margin-bottom: 16px; 
-    border-radius: 20px; 
-    --background:  rgb(255, 174, 174);
-  }
-  
-  
-  /*lista */
-  ion-list {
-    background-color:  rgb(216, 238, 241); 
-  }
-  
-  
-  /* toolbar */
-  ion-toolbar {
-    --background:  rgb(149, 250, 175); 
-  }
-  ion-back-button {
-    color: black; 
-    background-color:   rgb(149, 250, 175);
-    border-radius: 20px; 
-  }
-  .total-container p {
-    color: black; 
-  }
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-  ion-item {
-    color: black; 
-  }
-  
+ion-content {
+  --background: white;
+}
 
- 
-  
+h1,
+.btnRet {
+  display: inline-block;
+}
+
+.btnRet {
+  width: 50px;
+  height: 50px;
+  padding: 0px;
+  margin: 0px 0px 20px 5px;
+  --border-radius: 100%;
+  color: black;
+  --box-shadow: none;
+  font-size: auto;
+}
+
+.tit {
+  font-family: "Outfit", sans-serif;
+  font-size: 35px;
+  font-weight: 530;
+}
+
+h2,
+p {
+  font-family: "Outfit", sans-serif;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.info {
+  font-size: 15px;
+  display: inline-block;
+  padding-right: 30px;
+  margin-bottom: 10px;
+}
+
+.ptot,.btncon{
+  font-family: "Outfit", sans-serif;
+  display: inline-block;
+}
+
+.btncon{
+  --box-shadow: none;
+  --border-radius: 30px;
+  height: 60px;
+  width: 150px;
+  font-size: 18px;
+  --background: #37d153;
+}
+
+.ptot{
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 23px;
+  margin-left: 10px;
+}
+
+.ptotp{
+  margin-left: 35px;
+}
+
+ion-item-option{
+  width: 80px;
+  height: 99%;
+  margin-top: 5px;
+}
+
+.trash{
+  width: 50px;
+  height: 50px;
+}
+
