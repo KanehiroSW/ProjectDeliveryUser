@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/" routerLink="/detali-order"></ion-back-button>
     </ion-buttons>
     <ion-title>Detalle de Envío</ion-title>
   </ion-toolbar>
@@ -19,7 +19,12 @@
           </ion-button>
         </ion-col>
       </ion-row>
-
+      <h2>Subir Foto</h2>
+      <button (click)="tomarFoto()">Tomar Foto</button>
+      
+      <div *ngIf="fotoTomada">
+        <img [src]="fotoTomada" alt="Foto tomada">
+      </div>
       <ion-row>
         <ion-col size="6">
           <ion-label>Piso:</ion-label>
