@@ -1,70 +1,62 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/" routerLink="/detali-order"></ion-back-button>
-    </ion-buttons>
-    <ion-title>Detalle de Envío</ion-title>
+<ion-header class="ion-no-border">
+  <ion-toolbar class="header">
+    <ion-button class="btnRet" color="black" routerLink="/detali-order">
+      <ion-icon class="icRet" name="caret-back"></ion-icon>
+    </ion-button>
+    <h1 class="tit">Detalle de Envío</h1>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="container">
-    <h1 class="title">Detalle de Envío</h1>
-
-    <ion-grid>
-      <ion-row>
-        <ion-col size="12">
-          <ion-button expand="block" color="primary">
-            Subir Foto de Ubicación
-          </ion-button>
-        </ion-col>
-      </ion-row>
-      <h2>Subir Foto</h2>
-      <button (click)="tomarFoto()">Tomar Foto</button>
-      
-      <div *ngIf="fotoTomada">
+  <ion-list class="ion-padding">
+    <ion-item lines="none" class="iifot">
+      <div *ngIf="fotoTomada" class="Tfoto">
         <img [src]="fotoTomada" alt="Foto tomada">
       </div>
-      <ion-row>
-        <ion-col size="6">
-          <ion-label>Piso:</ion-label>
-        </ion-col>
-        <ion-col size="6" text-right>
-          <ion-input type="number" ></ion-input>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="6">
-          <ion-label>Pabellón:</ion-label>
-        </ion-col>
-        <ion-col size="6" text-right>
-          <ion-input type="text"></ion-input>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="6">
-          <ion-label>Aula (opcional):</ion-label>
-        </ion-col>
-        <ion-col size="6" text-right>
-          <ion-input type="number"></ion-input>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="12" text-center>
-          <ion-button expand="block" color="secondary">
-            Confirmar
-          </ion-button>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col size="12" text-center>
-          <!-- <img [src]="fotoAdjunta" alt="Foto de ubicación"> -->
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+    </ion-item>
+    <ion-item lines="none" class="itfoto">
+      <ion-button (click)="tomarFoto()" class="btnfoto">
+        Subir Foto de Ubicación
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Piso" interface="popover" placeholder="Selecciona Piso">
+        <ion-select-option value="1">1</ion-select-option>
+        <ion-select-option value="2">2</ion-select-option>
+        <ion-select-option value="3">3</ion-select-option>
+        <ion-select-option value="4">4</ion-select-option>
+        <ion-select-option value="5">5</ion-select-option>
+        <ion-select-option value="6">6</ion-select-option>
+        <ion-select-option value="7">7</ion-select-option>
+        <ion-select-option value="8">8</ion-select-option>
+        <ion-select-option value="9">9</ion-select-option>
+        <ion-select-option value="10">10</ion-select-option>
+        <ion-select-option value="11">11</ion-select-option>
+        <ion-select-option value="12">12</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Pabellón" interface="popover" placeholder="Selecciona Pabellón">
+        <ion-select-option value="A">A</ion-select-option>
+        <ion-select-option value="B">B</ion-select-option>
+        <ion-select-option value="C">C</ion-select-option>
+        <ion-select-option value="D">D</ion-select-option>
+        <ion-select-option value="E">E</ion-select-option>
+        <ion-select-option value="Magnum">Magnum</ion-select-option>
+        <ion-select-option value="Canyas">Canyas</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label">Aula</ion-label>
+      <ion-input placeholder="(Opcional)"></ion-input>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-button id="Finish" class="btncon" routerLink="/tabs/tab1">Ordenar</ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+<ion-toast trigger="Finish" message="Tu orden ha sido enviada" [duration]="3000" icon="globe" class="custom-toast"></ion-toast>

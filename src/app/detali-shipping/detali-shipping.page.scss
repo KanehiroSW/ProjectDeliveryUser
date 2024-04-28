@@ -1,62 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-
-    
-
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 ion-content {
-    --ion-background-color: #cefef9; /* Cambia el color de fondo de la página */
-    --ion-color-base: #FFFFFF; /* Cambia el color del texto a blanco */
+  --background: white;
 }
-.container {
-    padding: 16px;
-    background-color: #cefef9; /* Fondo de color */
-  }
-  
-  .title {
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 16px;
-  }
-  
-  ion-grid {
-    margin-top: 16px;
-  }
-  
-  ion-row {
-    margin-bottom: 16px;
-  }
-  
-  ion-label {
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  ion-input {
-    font-family: "Nunito Sans", sans-serif;
-    font-size: 16px;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  ion-button {
-    font-family: "Nunito Sans", sans-serif;
-    margin-top: 16px;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  ion-button[color="secondary"] {
-    background-color: #87CEEB; /* Azul claro */
-    color: #fff;
-  }
-  
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-top: 16px;
-  }
+
+h1,
+.btnRet {
+  display: inline-block;
+}
+
+.tit {
+  font-family: "Outfit", sans-serif;
+  font-size: 35px;
+  font-weight: 530;
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+
+.btnRet {
+  width: 50px;
+  height: 50px;
+  padding: 0px;
+  margin: 0px 0px 20px 5px;
+  --border-radius: 100%;
+  color: black;
+  --box-shadow: none;
+  font-size: auto;
+}
+
+
+.Tfoto {
+  width: 300px;
+  height: 250px;
+  margin-bottom: 10px;
+}
+
+.btnfoto {
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  display: flex;
+  margin: auto;
+  --box-shadow: none;
+  width: 100%;
+  height: 45px;
+  --border-radius: 50px;
+  margin-bottom: 20px;
+  --background: gray;
+}
+
+ion-select,
+.label,
+ion-input {
+  font-family: "Outfit", sans-serif;
+  font-size: 17px;
+}
+
+
+ion-input {
+  margin-left: 175px;
+}
+
+.btncon {
+  --box-shadow: none;
+  --border-radius: 30px;
+  height: 60px;
+  width: 90%;
+  font-size: 18px;
+  --background: #37d153;
+  margin: 15px 17px;
+}
+
+.header {
+  --background: url('/assets/ImgDShipping/DS-head.png') 0 0/100% 100% no-repeat;
+}
+
+ion-footer {
+  background: url('/assets/ImgDShipping/DS-footer.png') 0 0/100% 100% no-repeat;
+  height: 140px;
+}
+
+.custom-toast {
+  --background: #818181;
+  --box-shadow: none;
+  --color: #2f2f31;
+  font-family: "Outfit", sans-serif;
+  font-size: 17px;
+}

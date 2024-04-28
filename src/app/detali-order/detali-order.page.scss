@@ -24,6 +24,9 @@ h1,
   font-family: "Outfit", sans-serif;
   font-size: 35px;
   font-weight: 530;
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 30px;
 }
 
 h2,
@@ -79,3 +82,11 @@ ion-item-option{
   height: 50px;
 }
 
+.header {
+  --background: url('/assets/ImgDShipping/DS-head.png') 0 0/100% 100% no-repeat;
+}
+
+ion-footer {
+  background: url('/assets/ImgDShipping/DS-footer.png') 0 0/100% 100% no-repeat;
+  height: 140px;
+}
