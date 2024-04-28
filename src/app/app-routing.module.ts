@@ -7,6 +7,14 @@ const routes: Routes = [
     loadChildren: () => import('./intro/intro.module').then( m => m.IntroPageModule)
   },
   {
+    path: '',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
     path: 'detail-product',
     loadChildren: () => import('./detail-product/detail-product.module').then( m => m.DetailProductPageModule)
   },
