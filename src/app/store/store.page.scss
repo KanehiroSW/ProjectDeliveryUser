@@ -7,6 +7,10 @@
   border-bottom-left-radius: 40px;
 }
 
+.header-hidden {
+  top: -56px; /* Altura del encabezado */
+}
+
 .btnRet{
   --ripple-color: transparent;
   width: 45px;

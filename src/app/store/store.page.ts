@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 interface Product {
   name: string;
   description: string;
