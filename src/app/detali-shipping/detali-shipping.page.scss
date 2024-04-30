@@ -13,8 +13,8 @@ h1,
   font-family: "Outfit", sans-serif;
   font-size: 35px;
   font-weight: 530;
-  color: black;
-  margin-top: 5px;
+  color: white;
+  margin-top: 25px;
   margin-bottom: 30px;
 }
 
@@ -25,7 +25,7 @@ h1,
   padding: 0px;
   margin: 0px 0px 20px 5px;
   --border-radius: 100%;
-  color: black;
+  color: white;
   --box-shadow: none;
   font-size: auto;
 }
@@ -73,7 +73,10 @@ ion-input {
 }
 
 .header {
-  --background: url('/assets/ImgDShipping/DS-head.png') 0 0/100% 100% no-repeat;
+  --background: url('/assets/ImgDShipping/DS-head.png') 0 0/100% 170% no-repeat;
+  height: 100px;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
 }
 
 ion-footer {
