@@ -10,8 +10,10 @@
 <ion-content [fullscreen]="true">
   <ion-list class="ion-padding">
     <ion-item lines="none" class="iifot">
-      <div *ngIf="fotoTomada" class="Tfoto">
-        <img [src]="fotoTomada" alt="Foto tomada">
+      <div class="contImg">
+        <div *ngIf="fotoTomada" clas="subImg">
+        <img class="image-container" [src]="fotoTomada" alt="Foto tomada">
+        </div>
       </div>
     </ion-item>
     <ion-item lines="none" class="itfoto">
