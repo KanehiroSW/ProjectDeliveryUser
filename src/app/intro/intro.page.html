@@ -23,6 +23,12 @@
           </ion-input>
         </ion-item>
         <ion-item>
+          <ion-select label="Tipo de Usuario" label-placement="stacked" interface="popover" placeholder="Seleccion">
+            <ion-select-option value="Esudiante/Profesor">Esudiante/Profesor</ion-select-option>
+            <ion-select-option value="Personal Administrativo">Personal Administrativo</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <ion-item>
           <ion-button (click)="closeModal()" class="btnlog" color="#FC6060" routerLink="/tabs/tab1">
             Ingresar
           </ion-button>

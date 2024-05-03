@@ -22,7 +22,7 @@ export class Tab4Page {
           text: 'Sí',
           role: 'destructive',
           handler: () => {
-            this.router.navigate(['/intro']);
+            window.location.href = '/intro';
           }
         },
         {
