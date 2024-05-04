@@ -23,6 +23,7 @@ const routes: Routes = [
         path: 'tab4',
         loadChildren: () => import('../profile/tab4.module').then(m => m.Tab4PageModule)
       },
+      
     ]
   }
 ];

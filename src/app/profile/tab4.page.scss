@@ -82,3 +82,19 @@ p {
 .pname {
     color: black;
 }
+
+.btnclose{
+    --box-shadow: none;
+    --background: rgb(247, 83, 83);
+    --border-radius: 50px;
+    font-family: "Outfit", sans-serif;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 55%;
+}
+
+.actexit{
+    font-family: "Outfit", sans-serif;
+    font-size: 20px;
+    --color: black;
+}

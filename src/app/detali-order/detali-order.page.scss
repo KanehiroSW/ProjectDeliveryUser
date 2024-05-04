@@ -4,18 +4,20 @@ ion-content {
   --background: white;
 }
 
+
 h1,
 .btnRet {
   display: inline-block;
 }
 
 .btnRet {
+  --ripple-color: transparent;
   width: 50px;
   height: 50px;
   padding: 0px;
   margin: 0px 0px 20px 5px;
   --border-radius: 100%;
-  color: black;
+  color: white;
   --box-shadow: none;
   font-size: auto;
 }
@@ -24,8 +26,8 @@ h1,
   font-family: "Outfit", sans-serif;
   font-size: 35px;
   font-weight: 530;
-  color: black;
-  margin-top: 5px;
+  color: white;
+  margin-top: 25px;
   margin-bottom: 30px;
 }
 
@@ -79,11 +81,12 @@ ion-item-option{
 
 .trash{
   width: 50px;
-  height: 50px;
+  height: 50px; 
 }
 
 .header {
-  --background: url('/assets/ImgDShipping/DS-head.png') 0 0/100% 100% no-repeat;
+  --background: url('/assets/ImgDShipping/DS-head.png') 0 0/100% 170% no-repeat;
+  height: 100px;
 }
 
 ion-footer {

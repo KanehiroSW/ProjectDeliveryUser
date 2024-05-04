@@ -1,58 +1,45 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
-    <!-- Botón de retroceso -->
- 
-     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/" routerLink="../tabs"></ion-back-button>
-    </ion-buttons> 
-    <ion-title size="large">Kioskos</ion-title>
-    <!-- Icono de carrito de compras -->
-    <ion-buttons slot="end">
-      <ion-button routerLink="../detali-order">
-        <ion-icon name="cart"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-  <!-- Barra de búsqueda -->
-  <ion-toolbar>
-    <ion-searchbar (ionChange)="onSearch($event)" placeholder="Buscar producto"></ion-searchbar>
+  <ion-toolbar class="header">
+    <ion-button class="btnRet" color="white" routerLink="/tabs/tab1">
+      <ion-icon class="icRet" name="caret-back"></ion-icon>
+    </ion-button>
+    <ion-button class="cart" color="white" routerLink="/detali-order">
+      <ion-icon class="iccart" name="cart"></ion-icon>
+    </ion-button>
+    <div class="search">
+      <ion-searchbar (ionChange)="onSearch($event)" search-icon="fast-food"
+        placeholder="Buscar producto"></ion-searchbar>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content class="content-gris">
-  <div class="pedido-container">
-      <br>
-      <div class="pedido-item">
-          <div class="proveedor">
-              <div class="proveedor-img">
-                  <img src="" alt="Tienda 1">
-              </div>
-          </div>
-      </div>
-      <div class="pedido-item">
-          <div class="proveedor">
-              <div class="proveedor-img">
-                  <img src="" alt="Tienda 2">
-              </div>
-          </div>
-      </div>
-      <div class="pedido-item">
-          <div class="proveedor">
-              <div class="proveedor-img">
-                  <img src="./assets/sublime.jpg" alt="Tienda 3">
-              </div>
-          </div>
-      </div>
-      <div class="pedido-item">
-        <div class="proveedor">
-            <div class="proveedor-img">
-                <img src="./assets/papas.jpg" alt="Tienda 3">
-            </div>
-        </div>
-    </div>
-  </div>
+<ion-content>
+  <ion-list class="ion-padding" *ngFor="let product of filteredProducts">
+    <ion-item lines="none" class="product ion-no-padding">
+      <ion-thumbnail slot="start">
+        <img [src]="product.image" alt="Product Image">
+      </ion-thumbnail>
+      <ion-label>
+        <h2 class="product-name"><strong>{{ product.name }}</strong></h2>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">S/{{ product.price }}</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item class="ion-no-padding">
+      <ion-button class="addCart" slot="end">
+        <ion-icon class="add" name="add-circle"></ion-icon>
+      </ion-button>
+      <ion-buttons class="count" slot="start">
+        <ion-button (click)="decreaseQuantity(product)">
+          <ion-icon name="remove"></ion-icon>
+        </ion-button>
+        <ion-button>{{ product.quantity }}</ion-button>
+        <ion-button (click)="increaseQuantity(product)">
+          <ion-icon name="add"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+
+  </ion-list>
 </ion-content>
-
-
-
-

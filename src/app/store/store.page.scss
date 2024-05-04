@@ -1,44 +1,126 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
-ion-header.ion-no-border {
-  --border-width: 0;
+.header {
+  height: 135px;
+  --background: url('/assets/ImgShop/Banner1.png') 0 0/100% 130% no-repeat;
 }
 
-ion-toolbar {
-  --background: rgb(216, 238, 241);
-}
-
-ion-title, ion-back-button, ion-button[routerLink="/cart"] {
+.btnRet{
+  --ripple-color: transparent;
+  width: 45px;
+  height: 45px;
+  --box-shadow: none;
+  border-radius: 50%;
+  --border-radius: 50%;
   color: black;
+  background-color: transparent;
+}
+
+.icRet{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+
+.cart{
+  position: absolute;
+  --box-shadow: none;
+  margin-top: 10px;
+  right: 0px;
+  border-radius: 50%;
+  --border-radius: 50%;
+  margin-right: 10px;
+  width: 40px;
+  height: 40px;
+  color: rgb(204, 0, 255);
+  background-color: white;
+}
+
+.iccart{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-left: 0px;
+}
+
+.search {
+  margin: 10px 10px 0px 10px;
+  background: white;
+  border-radius: 70px;
+  padding: 0px 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
 ion-searchbar {
+  font-family: "Outfit", sans-serif;
   --background: white;
-  background-color: rgb(216, 238, 241);
-  border-radius: 20px;
+  border-bottom: black 10px;
+  --box-shadow: none;
+  width: 100%;
+  border-radius: 70px;
 }
 
-ion-content {
-  --background:  white;
-  
+ion-content, ion-list{
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+
+h2,
+p {
+  font-family: "Outfit", sans-serif;
+}
+
+h2 {
+  display: flex;
+  font-size: 20px;
+}
+
+.product {
+  height: 110px;
+}
+
+.price {
+  margin-top: 15px;
+  font-size: 20px;
+  text-align: right;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 16px;
+  position: flex;
 }
 
 
-.pedido-container { 
-  display: flex; 
-  flex-direction: column; 
-  margin: 0 30px; 
+ion-thumbnail {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-left: 4px;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.224);
 }
 
-.pedido-item { 
-  /* Reducir el tamaño del contenedor */ 
-  width: 150px; height: 150px; 
-  margin: 20px auto; 
-  background-color: #f2f2f2; 
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }
 
-.proveedor-img img { 
-  width: 100%; height: 100%; 
-  object-fit: cover; 
-  background-color: #f2f2f2; 
+.addCart {
+  --box-shadow: none;
+  --background: #31b549;
+  height: 30px;
+  width: 30px;
+  --border-radius: 50%;
+}
+
+.add{
+  position: fixed;
+  width: 30px;
+  height: 30px;
+}
+
+.count{
+  margin-left: 8px;
 }
