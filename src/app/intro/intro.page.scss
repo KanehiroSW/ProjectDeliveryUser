@@ -80,10 +80,20 @@ ion-label{
     font-family: "Outfit", sans-serif;
     font-size: 17px;
     background: #FC6060;
-    margin: 35px 0px 0px 0px;
+    margin: 25px 0px 0px 0px;
     --box-shadow: none;
     height: 40px;
     width: 100%;
     border-radius: 50px;
 }
 
+.error-message {
+    color: red;
+    text-align: center;
+}
+
+.error-message-inputs {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 5px;
+}
