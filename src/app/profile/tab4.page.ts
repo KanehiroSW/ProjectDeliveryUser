@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
+import { LoginService } from '../services/auth/login.service';
 
 @Component({
   selector: 'app-tab4',
   templateUrl: 'tab4.page.html',
   styleUrls: ['tab4.page.scss']
 })
-export class Tab4Page {
+export class Tab4Page implements OnInit{
 
-  constructor(
-    private actionSheetController: ActionSheetController,
-    private router: Router
-  ) {}
+  constructor(private loginService:LoginService, private actionSheetController: ActionSheetController, private router:Router) { }
 
-  async presentActionSheet() {
+  userLoginOn:boolean=false;
+
+  async cerrarSesion() {
     const actionSheet = await this.actionSheetController.create({
       header: '¿Estás seguro?',
       buttons: [
@@ -22,7 +22,7 @@ export class Tab4Page {
           text: 'Sí',
           role: 'destructive',
           handler: () => {
-            window.location.href = '/intro';
+            this.logout();
           }
         },
         {
@@ -32,4 +32,21 @@ export class Tab4Page {
     });
     await actionSheet.present();
   }
+
+  ngOnInit(): void {
+    this.loginService.currentUserLoginOn.subscribe(
+      {
+        next:(userLoginOn) => {
+          this.userLoginOn=userLoginOn;
+        }
+      }
+    )
+  }
+
+  logout()
+  {
+    this.loginService.logout();
+    this.router.navigate([''])
+  }
+
 }
