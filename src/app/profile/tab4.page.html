@@ -4,26 +4,28 @@
     <p class="ptit">PERFIL DE</p>
     <P class="psub">USUARIO</P>
   </div>
-  <ion-list lines="none">
+
+  <ion-list *ngIf="user" lines="none">
     <ion-item class="iitem iitemlog">
       <img class="imgPro" src="/assets/ImgProfile/Profile-foto.jpg" alt="profile">
-      <p class="pname">Jesús Alexis Pariona Cáceres</p>
+      <p class="pname">{{ user.nombre }} {{ user.apellido }}</p>
     </ion-item>
     <ion-item class="iitem">
       <ion-icon color="success" slot="start" name="person-circle" size="large"></ion-icon>
       <ion-label class="label">Usuario</ion-label>
-      <ion-note class="note" slot="end">jparionaca01</ion-note>
+      <ion-note class="note" slot="end">{{ user.usuario }}</ion-note>
     </ion-item>
     <ion-item class="iitem">
       <ion-icon color="success" slot="start" name="school" size="large"></ion-icon>
-      <ion-label class="label">Carrera</ion-label>
-      <ion-note class="note" slot="end">Ingeniería de Sistemas</ion-note>
+      <ion-label class="label">Email</ion-label>
+      <ion-note class="note" slot="end">{{ user.email }}</ion-note>
     </ion-item>
     <ion-item class="iitem">
       <ion-icon color="success" slot="start" name="call" size="large"></ion-icon>
       <ion-label class="label">Celular</ion-label>
-      <ion-note class="note" slot="end">987654321</ion-note>
+      <ion-note class="note" slot="end">{{ user.telefono }}</ion-note>
     </ion-item>
     <ion-button class="btnclose" (click)="cerrarSesion()" >Cerrar Sesión</ion-button>
   </ion-list>
+
 </ion-content>

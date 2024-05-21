@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { Tienda } from '../services/usuario/Tienda';
+import { UsuarioService } from '../services/usuario/usuario.service';
 
 @Component({
   selector: 'app-tab1',
@@ -6,8 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 
-export class Tab1Page {
+export class Tab1Page implements OnInit{
+  
+  private usuarioService = inject(UsuarioService);
 
-  constructor() {}
+  tiendas: Tienda[] = [];
 
+  ngOnInit(): void {
+    this.allTiendas();
+  }
+
+  allTiendas() {
+    this.usuarioService.list()
+      .subscribe(tiendas => {
+        this.tiendas = tiendas;
+      });
+  }
 }

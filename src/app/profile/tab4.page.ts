@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActionSheetController } from '@ionic/angular';
 import { LoginService } from '../services/auth/login.service';
+import { Usuario } from '../services/auth/Usuario';
 
 @Component({
   selector: 'app-tab4',
@@ -10,7 +11,17 @@ import { LoginService } from '../services/auth/login.service';
 })
 export class Tab4Page implements OnInit{
 
-  constructor(private loginService:LoginService, private actionSheetController: ActionSheetController, private router:Router) { }
+  user: Usuario | null = null;
+
+  constructor(
+    private loginService:LoginService,
+    private actionSheetController: ActionSheetController,
+    private router:Router
+  ) { }
+
+  ngOnInit() {
+    this.user = this.loginService.currentUserValue;
+  }
 
   userLoginOn:boolean=false;
 
@@ -22,7 +33,8 @@ export class Tab4Page implements OnInit{
           text: 'Sí',
           role: 'destructive',
           handler: () => {
-            this.logout();
+            this.loginService.logout();
+            this.router.navigate(['/']);
           }
         },
         {
@@ -32,21 +44,4 @@ export class Tab4Page implements OnInit{
     });
     await actionSheet.present();
   }
-
-  ngOnInit(): void {
-    this.loginService.currentUserLoginOn.subscribe(
-      {
-        next:(userLoginOn) => {
-          this.userLoginOn=userLoginOn;
-        }
-      }
-    )
-  }
-
-  logout()
-  {
-    this.loginService.logout();
-    this.router.navigate([''])
-  }
-
 }

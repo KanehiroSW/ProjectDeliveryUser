@@ -12,41 +12,18 @@
         <swiper-slide><img src="/assets/ImgStore/Info3.png" alt="Info3"></swiper-slide>
       </swiper-container>
     </div>
-    <ion-item lines="none">
-      <ion-card [button]="true" routerLink="/store">
-        <img alt="Banner1" src="/assets/ImgStore/Banner1.png" />
-        <ion-card-header>
-          <ion-card-title>Kiosco</ion-card-title>
-          <ion-card-subtitle>Ubicación: Pisos (1-8) Pabellón (A-B)</ion-card-subtitle>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-card [button]="true">
-        <img alt="Banner2" src="/assets/ImgStore/Banner4.png" />
-        <ion-card-header>
-          <ion-card-title>Pollos</ion-card-title>
-          <ion-card-subtitle>Ubicación: Al frente de la Biblioteca</ion-card-subtitle>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-card [button]="true">
-        <img alt="Banner3" src="/assets/ImgStore/Banner3.png" />
-        <ion-card-header>
-          <ion-card-title>Pizzas</ion-card-title>
-          <ion-card-subtitle>Ubicación: Al frente de la Biblioteca</ion-card-subtitle>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-card [button]="true">
-        <img alt="Banner4" src="/assets/ImgStore/Banner2.png" />
-        <ion-card-header>
-          <ion-card-title>Jugos</ion-card-title>
-          <ion-card-subtitle>Ubicación: Al frente de la Biblioteca</ion-card-subtitle>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
+
+    @for (tienda of tiendas; track tienda.idTienda) {
+      <ion-item lines="none">
+        <ion-card [button]="true" routerLink="/store">
+          <!-- <img alt="Banner1" src="/assets/ImgStore/Banner1.png" /> -->
+          <ion-card-header>
+            <ion-card-title>{{ tienda.nombreTienda }}</ion-card-title>
+            <ion-card-subtitle>{{ tienda.direccion }}</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+      </ion-item>
+    }
+    
   </ion-list>
 </ion-content>
