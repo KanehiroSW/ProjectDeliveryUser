@@ -7,4 +7,5 @@ export interface Tienda {
     email: string;
     telefono: string;
     imagen?: string;
+    imagenUrl?: string;
 }

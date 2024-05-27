@@ -14,32 +14,27 @@
 </ion-header>
 
 <ion-content>
-  <ion-list class="ion-padding" *ngFor="let product of filteredProducts">
-    <ion-item lines="none" class="product ion-no-padding">
-      <ion-thumbnail slot="start">
-        <img [src]="product.image" alt="Product Image">
-      </ion-thumbnail>
-      <ion-label>
-        <h2 class="product-name"><strong>{{ product.name }}</strong></h2>
-        <p class="description">{{ product.description }}</p>
-        <p class="price">S/{{ product.price }}</p>
-      </ion-label>
-    </ion-item>
+  <ion-list class="ion-padding">
 
-    <ion-item class="ion-no-padding">
-      <ion-button class="addCart" slot="end">
-        <ion-icon class="add" name="add-circle"></ion-icon>
-      </ion-button>
-      <ion-buttons class="count" slot="start">
-        <ion-button (click)="decreaseQuantity(product)">
-          <ion-icon name="remove"></ion-icon>
+    @for (producto of products; track producto.idProducto) {
+      <ion-item lines="none" lines="full" class="product-item">
+        <ion-thumbnail slot="start">
+          <img [src]="producto.imagenUrl" alt="{{ producto.nombreProducto }}">
+        </ion-thumbnail>
+        <ion-label>
+          <h2 class="product-name"><strong>{{ producto.nombreProducto }}</strong></h2>
+          <p class="product-description">{{ producto.descripcion }}</p>
+          <p class="product-price">{{ producto.precio }}</p>
+          <div class="quantity-input">
+            <ion-label position="stacked">Cantidad</ion-label>
+            <ion-input [(ngModel)]="producto.quantity" type="number" min="1"></ion-input>
+          </div>
+        </ion-label><!-- (click)="addToCart(producto)" -->
+        <ion-button fill="clear" color="primary" slot="end">
+          <ion-icon slot="icon-only" name="add-circle"></ion-icon>
         </ion-button>
-        <ion-button>{{ product.quantity }}</ion-button>
-        <ion-button (click)="increaseQuantity(product)">
-          <ion-icon name="add"></ion-icon>
-        </ion-button>
-      </ion-buttons>
-    </ion-item>
+      </ion-item>
+    }
 
-  </ion-list>
+</ion-list>
 </ion-content>

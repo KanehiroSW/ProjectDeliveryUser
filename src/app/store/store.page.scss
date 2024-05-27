@@ -80,18 +80,6 @@ h2 {
   height: 110px;
 }
 
-.price {
-  margin-top: 15px;
-  font-size: 20px;
-  text-align: right;
-}
-
-.description {
-  margin-top: 10px;
-  font-size: 16px;
-  position: flex;
-}
-
 
 ion-thumbnail {
   height: 100px;
@@ -123,4 +111,57 @@ img {
 
 .count{
   margin-left: 8px;
+}
+
+//Nuevos Estilos
+
+.product-item {
+  --padding-start: 0;
+  --inner-padding-end: 0;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.product-item ion-thumbnail {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-item ion-label {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.product-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-description {
+  color: #666;
+  font-size: 12px;
+}
+
+.product-price {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.quantity-input {
+  margin-top: 10px;
+}
+
+.quantity-input ion-input {
+  max-width: 80px;
+  margin-top: 5px;
+}
+
+ion-button[slot="end"] {
+  margin-left: auto;
+  font-size: 20px;
 }

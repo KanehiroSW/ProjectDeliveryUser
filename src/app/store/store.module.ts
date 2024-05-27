@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { StorePageRoutingModule } from './store-routing.module';
 
 import { StorePage } from './store.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    StorePageRoutingModule
+    StorePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [StorePage]
 })

@@ -15,8 +15,8 @@
 
     @for (tienda of tiendas; track tienda.idTienda) {
       <ion-item lines="none">
-        <ion-card [button]="true" routerLink="/store">
-          <!-- <img alt="Banner1" src="/assets/ImgStore/Banner1.png" /> -->
+        <ion-card [routerLink]="['/store', tienda.idTienda]" button>
+          <img [src]="tienda.imagenUrl" alt="{{ tienda.nombreTienda }}">
           <ion-card-header>
             <ion-card-title>{{ tienda.nombreTienda }}</ion-card-title>
             <ion-card-subtitle>{{ tienda.direccion }}</ion-card-subtitle>
@@ -24,6 +24,15 @@
         </ion-card>
       </ion-item>
     }
-    
+    <!-- <ion-item *ngFor="let tienda of tiendas; track tienda.idTienda">
+      <ion-card [routerLink]="['/store', tienda.idTienda]" button>
+        <img [src]="tienda.imagenUrl" alt="{{ tienda.nombreTienda }}">
+        <ion-card-header>
+          <ion-card-title>{{ tienda.nombreTienda }}</ion-card-title>
+          <ion-card-subtitle>{{ tienda.direccion }}</ion-card-subtitle>
+        </ion-card-header>
+      </ion-card>
+    </ion-item> -->
+
   </ion-list>
 </ion-content>

@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Producto } from '../services/usuario/Producto';
+import { UsuarioService } from '../services/usuario/usuario.service';
+import { ActivatedRoute } from '@angular/router';
 interface Product {
   name: string;
   description: string;
@@ -12,78 +15,33 @@ interface Product {
   templateUrl: './store.page.html',
   styleUrls: ['./store.page.scss'],
 })
-export class StorePage {
-  products: Product[] = [
-    {
-      name: 'Casino Chocolate',
-      description: 'Galleta de chocolate',
-      price: '1.50',
-      image: '/assets/ImgSProd/casinochocolate.png',
-      quantity: 1
-    },
-    {
-      name: 'Sublime',
-      description: 'Base de cacao',
-      price: '2.00',
-      image: '/assets/ImgSProd/sublime.png',
-      quantity: 1
-    },
-    {
-      name: 'CocaCola 500ml',
-      description: 'Bebida fresca',
-      price: '1.80',
-      image: '/assets/ImgSProd/cocacola.png',
-      quantity: 1
-    },
-    {
-      name: 'Soda V',
-      description: 'Galleta del campo',
-      price: '1.20',
-      image: '/assets/ImgSProd/sodav.png',
-      quantity: 1
-    },
-    {
-      name: 'Papas Lays',
-      description: 'Papas nativas',
-      price: '1.50',
-      image: '/assets/ImgSProd/lays.png',
-      quantity: 1
-    },
-    {
-      name: 'Chizitos',
-      description: 'Base de queso',
-      price: '1.50',
-      image: '/assets/ImgSProd/chizitos.png',
-      quantity: 1
-    }
-  ];
+export class StorePage implements OnInit {
 
-  filteredProducts: Product[] = this.products;
+  products: Producto[] = [];
+  idTienda!: number;
 
-  constructor() {
-  }
-  decreaseQuantity(product: Product) {
-    if (product.quantity > 1) {
-      product.quantity--;
-    }
+  constructor(private usuarioService: UsuarioService, private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    const idTiendaParam = this.route.snapshot.paramMap.get('idTienda');
+    this.idTienda = idTiendaParam ? parseInt(idTiendaParam, 10) : 0;
+    this.loadProducts();
   }
 
-  increaseQuantity(product: Product) {
-    product.quantity++;
+  loadProducts() {
+    this.usuarioService.listProductos(this.idTienda).subscribe(products => {
+      this.products = products;
+    });
   }
 
   onSearch(event: CustomEvent) {
     const searchTerm = event.detail.value;
     if (searchTerm.trim() !== '') {
-      this.filteredProducts = this.products.filter(product =>
-        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      this.products = this.products.filter(product =>
+        product.nombreProducto.toLowerCase().includes(searchTerm.toLowerCase())
       );
     } else {
-      this.filteredProducts = this.products;
+      this.loadProducts();
     }
   }
 }
-
-
-
-
