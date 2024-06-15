@@ -19,10 +19,6 @@ export class LoginService {
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  // register(user: any): Observable<any> {
-  //   return this.http.post(`${this.apiUrl}/register`, user);
-  // }
-
   login(dni: string, password: string): Observable<Usuario> {
     return this.http.post<Usuario>(`${this.apiUrl}/login`, { dni, password })
       .pipe(tap(user => {

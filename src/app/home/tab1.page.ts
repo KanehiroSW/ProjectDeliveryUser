@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Tienda } from '../services/usuario/Tienda';
-import { UsuarioService } from '../services/usuario/usuario.service';
+import { TiendaService } from '../services/usuario/tienda.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,15 +12,20 @@ export class Tab1Page implements OnInit{
 
   tiendas: Tienda[] = [];
 
-  constructor(private usuarioService: UsuarioService) { }
+  constructor(private tiendaService: TiendaService,  private router: Router) { }
 
   ngOnInit() {
     this.allTiendas();
   }
 
   allTiendas() {
-    this.usuarioService.listTiendas().subscribe(tiendas => {
+    this.tiendaService.listTiendas().subscribe(tiendas => {
       this.tiendas = tiendas;
     });
+  }
+
+  goToStore(tienda: Tienda) {
+    localStorage.setItem('idTienda', tienda.idTienda.toString());
+    this.router.navigate(['/store', tienda.idTienda]);
   }
 }

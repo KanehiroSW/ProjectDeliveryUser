@@ -21,7 +21,7 @@
       </ion-button>
     </ion-item>
     <ion-item>
-      <ion-select label="Piso" interface="popover" placeholder="Selecciona Piso">
+      <ion-select label="Piso" interface="popover" placeholder="Selecciona Piso" [(ngModel)]="piso">
         <ion-select-option value="1">1</ion-select-option>
         <ion-select-option value="2">2</ion-select-option>
         <ion-select-option value="3">3</ion-select-option>
@@ -37,7 +37,7 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-select label="Pabellón" interface="popover" placeholder="Selecciona Pabellón">
+      <ion-select label="Pabellón" interface="popover" placeholder="Selecciona Pabellón" [(ngModel)]="pabellon">
         <ion-select-option value="A">A</ion-select-option>
         <ion-select-option value="B">B</ion-select-option>
         <ion-select-option value="C">C</ion-select-option>
@@ -49,14 +49,14 @@
     </ion-item>
     <ion-item>
       <ion-label class="label">Aula</ion-label>
-      <ion-input placeholder="(Opcional)"></ion-input>
+      <ion-input placeholder="(Opcional)" [(ngModel)]="aula"></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>
 
 <ion-footer class="ion-no-border">
   <ion-toolbar>
-    <ion-button id="Finish" class="btncon" routerLink="/tabs/tab1">Ordenar</ion-button>
+    <ion-button id="Finish" class="btncon" (click)="confirmarPedido()">Ordenar</ion-button>
   </ion-toolbar>
 </ion-footer>
 
