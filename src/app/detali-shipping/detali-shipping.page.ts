@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 import { PedidoService } from '../services/usuario/pedido.service';
-import { LoginService } from '../services/auth/login.service';
 import { CartService } from '../services/usuario/cart.service';
+import { Router } from '@angular/router';
+import { Usuario } from '../services/auth/Usuario';
+import { Tienda } from '../services/usuario/Tienda';
+import { Pedido } from '../services/class/Pedido';
+import { DetallePedido } from '../services/usuario/DetallePedido';
+import { LoginService } from '../services/auth/login.service';
+
 
 @Component({
   selector: 'app-detali-shipping',
@@ -11,55 +16,57 @@ import { CartService } from '../services/usuario/cart.service';
 })
 export class DetaliShippingPage implements OnInit {
 
-  fotoTomada: string | undefined;
-  piso: string | undefined;
-  pabellon: string | undefined;
-  aula: string | undefined;
+  pedido: Pedido = new Pedido();
+  user: Usuario | null = null;
+  direccionEntrega!: string;
 
   constructor(
-    private pedidoService: PedidoService,
+    private loginService:LoginService,
     private cartService: CartService,
-    private loginService: LoginService,
-    // private storeService: StoreService
+    private pedidoService: PedidoService,
+    private router: Router
   ) {}
 
-  ngOnInit() {}
-
-  async tomarFoto() {
-    const image = await Camera.getPhoto({
-      quality: 90,
-      allowEditing: false,
-      resultType: CameraResultType.Base64,
-      source: CameraSource.Camera,
-    });
-
-    this.fotoTomada = 'data:image/jpeg;base64,' + image.base64String;
+  ngOnInit() {
+    this.user = this.loginService.currentUserValue;
   }
 
-  confirmarPedido() {
-    // const usuario = this.loginService.currentUserValue;
-    // const tienda = this.storeService.currentStoreValue;
+  placeOrder() {
+    const productos = this.cartService.getCartItems();
+    const detallePedidos: DetallePedido[] = productos.map((producto) => ({
+      producto: producto,
+      cantidad: producto.quantity,
+      precioUnitario: producto.precio,
+      totalDetalle: producto.precio * producto.quantity,
+    }));
 
-    // if (!usuario || !tienda) {
-    //   alert('Error: Usuario o tienda no seleccionados');
-    //   return;
-    // }
+    const pedido: Pedido = {
+      direccionEntrega: this.direccionEntrega,
+      fechaPedido: new Date(),
+      usuario: { idUsuario: this.user?.idUsuario } as Usuario,
+      tienda: { idTienda: parseInt(localStorage.getItem('idTienda') || '1', 10) } as Tienda,
+      detallePedidos: detallePedidos,
+      totalPedido: this.getTotal(),
+    };
 
-    // const pedido: Pedido = {
-    //   numeroSerie: this.pedidoService.generarNumeroSerie(),
-    //   direccionEntrega: `Piso: ${this.piso}, Pabellón: ${this.pabellon}, Aula: ${this.aula}`,
-    //   fechaPedido: new Date(),
-    //   usuario: usuario,
-    //   tienda: tienda,
-    //   detallePedidos: this.cartService.getCartItems(),
-    //   totalPedido: this.cartService.calculateTotal(),
-    //   estadoPedido: 'PENDIENTE'
-    // };
+    this.pedidoService.savePedido(pedido).subscribe(
+      () => {
+        alert('Pedido realizado con éxito');
+        this.cartService.clearCart();
+        this.router.navigate(['/tabs/tab1']);
+      },
+      (error: Pedido) => {
+        console.error('Error al realizar el pedido:', error);
+      }
+    );
+  }
 
-    // this.pedidoService.savePedido(pedido).subscribe(() => {
-    //   alert('Tu orden ha sido enviada');
-    //   this.cartService.clearCart();
-    //   // Redirigir a la página principal o a la página de confirmación
-    // });
+  getTotal() {
+    const productos = this.cartService.getCartItems();
+    return productos.reduce((i, j) => i + j.precio * j.quantity, 0);
+  }
+
+  goToOrder() {
+    this.router.navigate(['/detali-order']);
   }
 }

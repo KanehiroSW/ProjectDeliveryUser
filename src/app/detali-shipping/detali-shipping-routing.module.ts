@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { DetaliShippingPage } from './detali-shipping.page';
+
 
 const routes: Routes = [
   {

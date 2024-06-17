@@ -6,57 +6,19 @@
     <h1 class="tit">Detalle de Envío</h1>
   </ion-toolbar>
 </ion-header>
+
 <ion-content [fullscreen]="true">
   <ion-list class="ion-padding">
-    <ion-item lines="none" class="iifot">
-      <div class="contImg">
-        <div *ngIf="fotoTomada" class="subImg">
-        <img class="image-container" [src]="fotoTomada" alt="Foto tomada">
-        </div>
-      </div>
-    </ion-item>
-    <ion-item lines="none" class="itfoto">
-      <ion-button (click)="tomarFoto()" class="btnfoto">
-        Subir Foto de Ubicación
-      </ion-button>
-    </ion-item>
     <ion-item>
-      <ion-select label="Piso" interface="popover" placeholder="Selecciona Piso" [(ngModel)]="piso">
-        <ion-select-option value="1">1</ion-select-option>
-        <ion-select-option value="2">2</ion-select-option>
-        <ion-select-option value="3">3</ion-select-option>
-        <ion-select-option value="4">4</ion-select-option>
-        <ion-select-option value="5">5</ion-select-option>
-        <ion-select-option value="6">6</ion-select-option>
-        <ion-select-option value="7">7</ion-select-option>
-        <ion-select-option value="8">8</ion-select-option>
-        <ion-select-option value="9">9</ion-select-option>
-        <ion-select-option value="10">10</ion-select-option>
-        <ion-select-option value="11">11</ion-select-option>
-        <ion-select-option value="12">12</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-select label="Pabellón" interface="popover" placeholder="Selecciona Pabellón" [(ngModel)]="pabellon">
-        <ion-select-option value="A">A</ion-select-option>
-        <ion-select-option value="B">B</ion-select-option>
-        <ion-select-option value="C">C</ion-select-option>
-        <ion-select-option value="D">D</ion-select-option>
-        <ion-select-option value="E">E</ion-select-option>
-        <ion-select-option value="Magnum">Magnum</ion-select-option>
-        <ion-select-option value="Canyas">Canyas</ion-select-option>
-      </ion-select>
-    </ion-item>
-    <ion-item>
-      <ion-label class="label">Aula</ion-label>
-      <ion-input placeholder="(Opcional)" [(ngModel)]="aula"></ion-input>
+      <ion-label>Dirección de Entrega</ion-label>
+      <ion-input placeholder="Escribe tu dirección" [(ngModel)]="direccionEntrega"></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>
 
 <ion-footer class="ion-no-border">
   <ion-toolbar>
-    <ion-button id="Finish" class="btncon" (click)="confirmarPedido()">Ordenar</ion-button>
+    <ion-button id="Finish" class="btncon" (click)="placeOrder()">Ordenar</ion-button>
   </ion-toolbar>
 </ion-footer>
 

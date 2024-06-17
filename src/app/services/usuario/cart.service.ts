@@ -15,6 +15,7 @@ export class CartService {
     } else {
       this.cart.push(producto);
     }
+    console.log(this.cart);
   }
 
   removeProduct(producto: Producto) {

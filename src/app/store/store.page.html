@@ -24,7 +24,7 @@
         <ion-label>
           <h2 class="product-name"><strong>{{ producto.nombreProducto }}</strong></h2>
           <p class="product-description">{{ producto.descripcion }}</p>
-          <p class="product-price">{{ producto.precio }}</p>
+          <p class="product-price">Precio: {{ producto.precio }}</p>
           <div class="quantity-input">
             <ion-label position="stacked">Cantidad</ion-label>
             <ion-input [(ngModel)]="producto.quantity" type="number" min="1"></ion-input>

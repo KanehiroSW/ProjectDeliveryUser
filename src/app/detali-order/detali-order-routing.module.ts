@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { DetaliOrderPage } from './detali-order.page';
+
+
 
 const routes: Routes = [
   {
