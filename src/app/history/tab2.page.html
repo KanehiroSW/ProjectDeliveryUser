@@ -1,10 +1,16 @@
 <ion-content [fullscreen]="true">
   <div class="header">
     <p class="ptit">HISTORIAL</p>
-    <P class="psub">DE PEDIDOS</P>
-    <img class="imgHsold" src="/assets/ImgHistory/History-Sold.png" alt="sold">
+    <p class="psub">DE PEDIDOS</p>
+    <img
+      class="imgHsold"
+      src="/assets/ImgHistory/History-Sold.png"
+      alt="sold"
+    />
   </div>
   <ion-list lines="none">
+
+    @for (pedido of pedidos; track pedido.idPedido) {
     <ion-item lines="none">
       <ion-card>
         <ion-card-header>
@@ -14,7 +20,7 @@
                 <ion-card-title>Proveedor:</ion-card-title>
               </ion-col>
               <ion-col>
-                <ion-card-title class="Hstore">Kiosco</ion-card-title>
+                <ion-card-title class="Hstore">{{ pedido.tienda.nombreTienda }}</ion-card-title>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -23,14 +29,16 @@
               <ion-item slot="header" color="light">
                 <ion-label>Productos</ion-label>
               </ion-item>
-              <div slot="content">
-                <div class="Product ion-padding" slot="content">Galleta Soda</div>
-                <div class="Quantity ion-padding" slot="content">2</div>
-              </div>
-              <div slot="content">
-                <div class="Product ion-padding" slot="content">Galleta Soda</div>
-                <div class="Quantity ion-padding" slot="content">2</div>
-              </div>
+              @for (detalle of pedido.detallePedidos; track detalle.idDetalle) {
+                <div slot="content">
+                  <div class="Product ion-padding" slot="content">
+                    {{ detalle.producto.nombreProducto }}
+                  </div>
+                  <div class="Quantity ion-padding" slot="content">
+                    {{ detalle.producto.quantity }}
+                  </div>
+                </div>
+              }
             </ion-accordion>
           </ion-accordion-group>
           <ion-grid>
@@ -39,7 +47,7 @@
                 <ion-card-subtitle>Total:</ion-card-subtitle>
               </ion-col>
               <ion-col>
-                <ion-card-subtitle>S/20.0</ion-card-subtitle>
+                <ion-card-subtitle>{{ pedido.totalPedido | currency }}</ion-card-subtitle>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -49,114 +57,14 @@
                 <ion-card-subtitle>Fecha:</ion-card-subtitle>
               </ion-col>
               <ion-col>
-                <ion-card-subtitle>27/04/2024</ion-card-subtitle>
+                <ion-card-subtitle>{{ pedido.fechaPedido | date:'dd/MM/yyyy' }}</ion-card-subtitle>
               </ion-col>
             </ion-row>
           </ion-grid>
         </ion-card-header>
       </ion-card>
     </ion-item>
-    <ion-item lines="none">
-      <ion-card>
-        <ion-card-header>
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <ion-card-title>Proveedor:</ion-card-title>
-              </ion-col>
-              <ion-col>
-                <ion-card-title class="Hstore">Kiosco</ion-card-title>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-accordion-group>
-            <ion-accordion value="content-product">
-              <ion-item slot="header" color="light">
-                <ion-label>Productos</ion-label>
-              </ion-item>
-              <div slot="content">
-                <div class="Product ion-padding" slot="content">Galleta Soda</div>
-                <div class="Quantity ion-padding" slot="content">2</div>
-              </div>
-              <div slot="content">
-                <div class="Product ion-padding" slot="content">Galleta Soda</div>
-                <div class="Quantity ion-padding" slot="content">2</div>
-              </div>
-            </ion-accordion>
-          </ion-accordion-group>
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <ion-card-subtitle>Total:</ion-card-subtitle>
-              </ion-col>
-              <ion-col>
-                <ion-card-subtitle>S/20.0</ion-card-subtitle>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <ion-card-subtitle>Fecha:</ion-card-subtitle>
-              </ion-col>
-              <ion-col>
-                <ion-card-subtitle>27/04/2024</ion-card-subtitle>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-card>
-        <ion-card-header>
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <ion-card-title>Proveedor:</ion-card-title>
-              </ion-col>
-              <ion-col>
-                <ion-card-title class="Hstore">Kiosco</ion-card-title>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-accordion-group>
-            <ion-accordion value="content-product">
-              <ion-item slot="header" color="light">
-                <ion-label>Productos</ion-label>
-              </ion-item>
-              <div slot="content">
-                <div class="Product ion-padding" slot="content">Galleta Soda</div>
-                <div class="Quantity ion-padding" slot="content">2</div>
-              </div>
-              <div slot="content">
-                <div class="Product ion-padding" slot="content">Galleta Soda</div>
-                <div class="Quantity ion-padding" slot="content">2</div>
-              </div>
-            </ion-accordion>
-          </ion-accordion-group>
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <ion-card-subtitle>Total:</ion-card-subtitle>
-              </ion-col>
-              <ion-col>
-                <ion-card-subtitle>S/20.0</ion-card-subtitle>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-          <ion-grid>
-            <ion-row>
-              <ion-col>
-                <ion-card-subtitle>Fecha:</ion-card-subtitle>
-              </ion-col>
-              <ion-col>
-                <ion-card-subtitle>27/04/2024</ion-card-subtitle>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card-header>
-      </ion-card>
-    </ion-item>
+    }
+
   </ion-list>
 </ion-content>

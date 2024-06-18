@@ -3,6 +3,7 @@ import { DetallePedido } from "../usuario/DetallePedido";
 import { Tienda } from "../usuario/Tienda";
 
 export class Pedido {
+    idPedido?: number;
     numeroSerie?: string;
     direccionEntrega?: string;
     fechaPedido?: Date;

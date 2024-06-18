@@ -16,4 +16,12 @@ export class PedidoService {
   savePedido(pedido: Pedido): Observable<Pedido> {
     return this.http.post<Pedido>(`${this.apiUrlPedido}/save`, pedido);
   }
+
+  getHistorialPedidos(usuarioId: number): Observable<Pedido[]> {
+    return this.http.get<Pedido[]>(`${this.apiUrlPedido}/usuario/${usuarioId}/historial`);
+  }
+
+  getPendingPedidos(usuarioId: number): Observable<Pedido[]> {
+    return this.http.get<Pedido[]>(`${this.apiUrlPedido}/usuario/${usuarioId}/pendientes`);
+  }
 }
