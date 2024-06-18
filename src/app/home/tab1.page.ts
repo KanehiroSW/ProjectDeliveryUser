@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Tienda } from '../services/usuario/Tienda';
 import { TiendaService } from '../services/usuario/tienda.service';
 import { Router } from '@angular/router';
@@ -12,7 +12,10 @@ export class Tab1Page implements OnInit{
 
   tiendas: Tienda[] = [];
 
-  constructor(private tiendaService: TiendaService,  private router: Router) { }
+  constructor(
+    private tiendaService: TiendaService,
+    private router: Router,
+  ) { }
 
   ngOnInit() {
     this.allTiendas();

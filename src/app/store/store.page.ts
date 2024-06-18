@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from '../services/usuario/Producto';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductoService } from '../services/usuario/producto.service';
 import { CartService } from '../services/usuario/cart.service';
 
@@ -17,7 +17,8 @@ export class StorePage implements OnInit {
   constructor(
     private productoService: ProductoService,
     private route: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -52,5 +53,10 @@ export class StorePage implements OnInit {
     } else {
       alert('Por favor, ingrese una cantidad válida');
     }
+  }
+
+  goHome() {
+    this.router.navigate(['/tabs/tab1']);
+    this.cartService.clearCart();
   }
 }

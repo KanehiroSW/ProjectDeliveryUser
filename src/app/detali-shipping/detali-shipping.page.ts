@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PedidoService } from '../services/usuario/pedido.service';
 import { CartService } from '../services/usuario/cart.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from '../services/auth/Usuario';
 import { Tienda } from '../services/usuario/Tienda';
 import { Pedido } from '../services/class/Pedido';
@@ -24,7 +24,8 @@ export class DetaliShippingPage implements OnInit {
     private loginService:LoginService,
     private cartService: CartService,
     private pedidoService: PedidoService,
-    private router: Router
+    private route: ActivatedRoute,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -40,11 +41,13 @@ export class DetaliShippingPage implements OnInit {
       totalDetalle: producto.precio * producto.quantity,
     }));
 
+    const idTienda = parseInt(localStorage.getItem('idTienda') || '0', 10);
+
     const pedido: Pedido = {
       direccionEntrega: this.direccionEntrega,
       fechaPedido: new Date(),
       usuario: { idUsuario: this.user?.idUsuario } as Usuario,
-      tienda: { idTienda: parseInt(localStorage.getItem('idTienda') || '1', 10) } as Tienda,
+      tienda: { idTienda: idTienda } as Tienda,
       detallePedidos: detallePedidos,
       totalPedido: this.getTotal(),
     };
@@ -55,7 +58,7 @@ export class DetaliShippingPage implements OnInit {
         this.cartService.clearCart();
         this.router.navigate(['/tabs/tab1']);
       },
-      (error: Pedido) => {
+      (error: any) => {
         console.error('Error al realizar el pedido:', error);
       }
     );
