@@ -59,7 +59,7 @@ h2 {
   height: 60px;
   width: 150px;
   font-size: 18px;
-  --background: #37d153;
+  --background: gray;
 }
 
 .ptot{
@@ -85,11 +85,8 @@ ion-item-option{
 }
 
 .header {
-  --background: url('/assets/ImgDShipping/DS-head.png') 0 0/100% 170% no-repeat;
+  --background: red;
   height: 100px;
 }
 
-ion-footer {
-  background: url('/assets/ImgDShipping/DS-footer.png') 0 0/100% 100% no-repeat;
-  height: 140px;
-}
+
