@@ -5,5 +5,5 @@ export interface Usuario {
     apellido:string;
     telefono:string;
     email:string;
-    usuario:string;
+    nombre_usuario:string;
 }
