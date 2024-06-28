@@ -19,6 +19,8 @@ export class DetaliShippingPage implements OnInit {
   pedido: Pedido = new Pedido();
   user: Usuario | null = null;
   direccionEntrega!: string;
+  selectedMethod: string = '';
+  showImage: boolean = false;
 
   constructor(
     private loginService:LoginService,
@@ -28,6 +30,10 @@ export class DetaliShippingPage implements OnInit {
     private router: Router,
   ) {}
 
+  toggleImage(show: boolean) {
+    this.showImage = show;
+  }
+  
   ngOnInit() {
     this.user = this.loginService.currentUserValue;
   }
