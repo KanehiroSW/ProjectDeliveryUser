@@ -1,0 +1,14 @@
+<ion-content [fullscreen]="true">
+  
+    <div class="review-container">
+      <h2>Califica el servicio de la aplicación</h2>
+      <ion-buttons>
+        <ion-button *ngFor="let star of [1, 2, 3, 4, 5]" (click)="rateProduct(star)">
+          <ion-icon [name]="star <= rating ? 'star' : 'star-outline'"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-button expand="block" class="submit-button" (click)="submitReview()" routerLink="/intro">
+        Enviar
+      </ion-button>
+    </div>
+</ion-content>

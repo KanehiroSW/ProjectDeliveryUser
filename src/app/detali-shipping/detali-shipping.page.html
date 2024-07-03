@@ -11,29 +11,26 @@
   <ion-list class="ion-padding">
     <ion-item lines="none">
       <ion-label>Dirección de Entrega</ion-label>
-      <ion-input placeholder="Escribe tu dirección" [(ngModel)]="direccionEntrega"></ion-input>
-    </ion-item>
-    <ion-radio-group value="Metodo-pago">
-      <ion-item lines="none">
-        <ion-label>Método de Pago:</ion-label>
-      </ion-item>
-      <ion-item lines="none">
-        <ion-radio value="Efectivo" (click)="toggleImage(false)" justify="space-between">Pago Contraentrega</ion-radio><br />
-      </ion-item>
-        <ion-item lines="none">
-          <ion-radio value="Yape" (click)="toggleImage(true)" justify="space-between">Pago con YAPE</ion-radio>
-        </ion-item>
-    </ion-radio-group>
-    <ion-item *ngIf="showImage" lines="none">
-      <ion-img src="./assets/qr.jpg"></ion-img>
+      <ion-input
+        placeholder="Escribe tu dirección"
+        [(ngModel)]="direccionEntrega"
+      ></ion-input>
     </ion-item>
   </ion-list>
 </ion-content>
 
 <ion-footer class="ion-no-border">
   <ion-toolbar>
-    <ion-button id="Finish" class="btncon" (click)="placeOrder()">Ordenar</ion-button>
+    <ion-button id="Finish" class="btncon" (click)="placeOrder()"
+      >Ordenar</ion-button
+    >
   </ion-toolbar>
 </ion-footer>
 
-<ion-toast trigger="Finish" message="Tu orden ha sido enviada" [duration]="3000" icon="globe" class="custom-toast"></ion-toast>
+<ion-toast
+  trigger="Finish"
+  message="Tu orden ha sido enviada"
+  [duration]="3000"
+  icon="globe"
+  class="custom-toast"
+></ion-toast>

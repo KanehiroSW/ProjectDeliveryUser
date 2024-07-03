@@ -30,9 +30,6 @@ export class DetaliShippingPage implements OnInit {
     private router: Router,
   ) {}
 
-  toggleImage(show: boolean) {
-    this.showImage = show;
-  }
   
   ngOnInit() {
     this.user = this.loginService.currentUserValue;
@@ -78,4 +75,6 @@ export class DetaliShippingPage implements OnInit {
   goToOrder() {
     this.router.navigate(['/detali-order']);
   }
+
+  
 }

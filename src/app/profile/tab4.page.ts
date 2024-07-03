@@ -34,7 +34,7 @@ export class Tab4Page implements OnInit{
           role: 'destructive',
           handler: () => {
             this.loginService.logout();
-            this.router.navigate(['/']);
+            this.router.navigate(['/coomentarios']);
           }
         },
         {
